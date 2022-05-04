@@ -1,4 +1,4 @@
-const CreateNewUser = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
     'User',
     {
@@ -8,7 +8,6 @@ const CreateNewUser = (sequelize, DataTypes) => {
     },
     {
       underscored: true,
-      sequelize: db,
       modelName: 'users',
       timestamps: false,
     },
@@ -20,5 +19,3 @@ const CreateNewUser = (sequelize, DataTypes) => {
 
   return User;
 };
-
-module.exports = CreateNewUser;
