@@ -1,10 +1,10 @@
-const { Appointment }  = require('../database/models');
+const { AppointmentsService } = require('../services/AppointmentsService');
 
 class AppointmentsController {
   static async createAppointment(req, res) {
     try {
       const { title, time, description, userId } = req.body;
-      const appointment = await Appointment.create({ title, time, description, userId });
+      const appointment = await AppointmentsService.createAppointment(title, time, description, userId);
       return res.status(201).json(appointment);
     } catch (error) {
       console.log(error);
@@ -14,7 +14,7 @@ class AppointmentsController {
 
   static async listAppointments(_req, res) {
     try {
-      const appointments = await Appointment.findAll();
+      const appointments = await AppointmentsService.listAppointments();
       if (!appointments) return res.status(404).json({ message: 'There are no appointments listed' });
       return res.status(200).json(appointments);
     } catch (error) {
@@ -26,7 +26,7 @@ class AppointmentsController {
   static async findAppointment(req, res) {
     try {
       const { id } = req.params;
-      const appointment = await Appointment.findByPk(id);
+      const appointment = await AppointmentsService.findAppointment(id);
       if (!appointment) return res.status(404).json({ message: 'Appointment not found' });
       return res.status(200).json(appointment);
     } catch (error) {
@@ -39,13 +39,7 @@ class AppointmentsController {
     try {
       const { id } = req.params;
       const { title, time, description } = req.body;
-      await Appointment.update({
-        title,
-        time,
-        description,
-      }, {
-        where: { id },
-      });
+      await AppointmentsService.editAppointment(id, title, time, description);
       return res.status(200).json({ message: 'Appointment updated' });
     } catch (error) {
       console.log(error);
@@ -56,7 +50,7 @@ class AppointmentsController {
   static async deleteAppointment(req, res) {
     try {
       const { id } = req.params;
-      await Appointment.destroy({ where: { id } });
+      await AppointmentsService.deleteAppointment(id);
       return res.status(204).json({ message: 'Appointment deleted' });
     } catch (error) {
       console.log(error);

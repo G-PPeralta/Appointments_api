@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Appointment = sequelize.define('Appointment', {
     title: DataTypes.STRING,
-    time: DataTypes.STRING,
+    time: DataTypes.DATE,
     description: DataTypes.TEXT,
     userId: { type: DataTypes.INTEGER, foreignKey: true },
   },

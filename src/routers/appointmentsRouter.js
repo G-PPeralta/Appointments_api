@@ -1,9 +1,10 @@
 const express = require('express');
 const { AppointmentsController } = require('../controllers/AppointmentsController');
+const { Validations } = require('../middlewares/appointmentsValidations')
 
 const appointmentsRouter = express.Router();
 
-appointmentsRouter.post('/', AppointmentsController.createAppointment);
+appointmentsRouter.post('/', Validations.createAppointment, AppointmentsController.createAppointment);
 appointmentsRouter.get('/', AppointmentsController.listAppointments);
 appointmentsRouter.get('/:id', AppointmentsController.findAppointment);
 appointmentsRouter.put('/:id', AppointmentsController.editAppointment);

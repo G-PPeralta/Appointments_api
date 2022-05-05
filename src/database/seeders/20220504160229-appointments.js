@@ -5,12 +5,12 @@ module.exports = {
     [
       {
         title: 'Estudar',
-        time: Date.now(),
+        time: '2022-05-04T23:00:00Z',
         description: 'Estudar Node',
       },
       {
         title: 'Trabalhar',
-        time: Date.now(),
+        time: '2022-05-04T23:00:00Z',
         description: 'Estudar React'
       },
     ], {}),
