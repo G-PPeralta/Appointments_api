@@ -26,7 +26,7 @@ class AppointmentsService {
       where: { id },
     });
     return editAppointment;
-  }
+  } 
 
   static async deleteAppointment(id) {
     await Appointment.destroy({ where: { id } });
