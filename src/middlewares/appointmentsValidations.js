@@ -11,7 +11,7 @@ class Validations {
       return res.status(400).json({ message: '"description" is required' });
     }
     return next();
-  }; 
+  };
 }
 
 module.exports = { Validations };

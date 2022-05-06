@@ -1,6 +1,5 @@
 const express = require('express');
 const { AppointmentsController } = require('../controllers/AppointmentsController');
-const { Validations } = require('../middlewares/appointmentsValidations')
 
 const appointmentsRouter = express.Router();
 

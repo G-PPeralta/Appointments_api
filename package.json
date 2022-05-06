@@ -2,7 +2,10 @@
   "name": "appointments_api",
   "version": "1.0.0",
   "description": "CRUD with Node.js",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node": "14.17.0"
+  },
   "scripts": {
     "test": "mocha ./src/tests/**/*$NAME*.test.js --exit",
     "start": "nodemon ./src/server.js"

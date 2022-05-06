@@ -12,7 +12,6 @@ chai.use(chaiHttp);
 const { expect } = chai;
 
 describe('Rota /appointments', () => {
-
   before(() => {
     sinon.stub(Appointment, 'create').callsFake(appointmentMock.create);
     sinon.stub(Appointment, 'findAll').callsFake(appointmentMock.findAll);
@@ -22,7 +21,6 @@ describe('Rota /appointments', () => {
     Appointment.create.restore();
     Appointment.findAll.restore();
   });
-
 
   describe('Consulta a lista de appointments', () => {
     let response;
@@ -34,11 +32,11 @@ describe('Rota /appointments', () => {
     });
 
     it(
-      'A requisição GET para a rota traz uma lista inicial ' +
-      'contendo dois registros de appointments',
+      'A requisição GET para a rota traz uma lista inicial '
+      + 'contendo dois registros de appointments',
       () => {
         expect(response.body).to.have.length(2);
-      }
+      },
     );
 
     it('Essa requisição deve retornar código de status 200', () => {
@@ -51,9 +49,9 @@ describe('Rota /appointments', () => {
     let firstAppoitmentsList = [];
     let secondAppointmentsList = [];
     const newAppointment = {
-      title: "Entrevista",
-      time: "2022-05-04T23:00:00Z",
-      description: "entrevista de emprego para desafio técnico"
+      title: 'Entrevista',
+      time: '2022-05-04T23:00:00Z',
+      description: 'entrevista de emprego para desafio técnico',
     };
 
     before(async () => {
