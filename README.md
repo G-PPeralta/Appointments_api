@@ -25,7 +25,7 @@ Usuários deveriam ser capazes de:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://appointments-ik-frontend.herokuapp.com/)
+- Live Site URL: [Site URL](https://appointments-ik-frontend.herokuapp.com/)
 
 ### Software Architecture
 
