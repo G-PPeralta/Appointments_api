@@ -1,7 +1,7 @@
 const Appointments = require('./Appointment.json');
 
 const mockCreate = (Instance, data) => {
-  if(!data){
+  if(!!data){
     return;
   }
 

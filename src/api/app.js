@@ -7,6 +7,7 @@ app.use(express.json());
 const apiRoutes = express.Router();
 
 apiRoutes.get('/appointments', AppointmentsController.listAppointments);
+apiRoutes.post('/appointments', AppointmentsController.createAppointment);
 
 app.use(apiRoutes);
 
